@@ -14,5 +14,14 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Input text: " + text);
         System.out.println("Is it a palindrome?" + flag);
+
+//        UC3 - Reverse Case based Palindrome checker
+        String rev="";
+        for(int i = len-1, j = 0; i >= 0; i--, j++){
+            rev += text.charAt(i);
+        }
+        if(rev.equals(text)){
+            System.out.println("It is a palindrome");
+        }
     }
 }
