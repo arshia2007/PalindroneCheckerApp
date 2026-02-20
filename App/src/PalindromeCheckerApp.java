@@ -76,8 +76,19 @@ public class PalindromeCheckerApp {
         System.out.println("Input text: " + input3);
         System.out.println("Is it a palindrome?" + isPalindrome3);
 
-
-
-
+//        UC7 - Deque Based Optimized Palindrome Checker
+        String input4 = "refer";
+        boolean isPalindrome4 = true;
+        Deque<Character> deque = new ArrayDeque<>();
+        for(char c : input4.toCharArray()){
+            deque.add(c);
+        }
+        while(deque.size() > 1){
+            if(deque.removeFirst() != deque.removeLast()){
+                isPalindrome4 = false;
+            }
+        }
+        System.out.println("Input text: " + input4);
+        System.out.println("Is it a palindrome?" + isPalindrome4);
     }
 }
