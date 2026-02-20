@@ -23,5 +23,21 @@ public class PalindromeCheckerApp {
         if(rev.equals(text)){
             System.out.println("It is a palindrome");
         }
+
+//        UC4 - Character Array Based Validation
+        String input = "radar";
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        boolean isPalindrome = true;
+        while (start < end){
+            if(chars[start] != chars[end]){
+                isPalindrome = false;
+            }
+            start++;
+            end--;
+        }
+        System.out.println("Input text: " + input);
+        System.out.println("Is it a palindrome?" + isPalindrome);
     }
 }
