@@ -43,18 +43,39 @@ public class PalindromeCheckerApp {
 
 //        UC5 - Stack Based Palindrome Checker
         String input2 = "noon";
+        boolean isPalindrome2 = true;
         Stack<Character> stack = new Stack<>();
         for(char c : input2.toCharArray()){
             stack.push(c);
         }
         for(char c : input2.toCharArray()){
             if(c != stack.pop()){
-                isPalindrome = false;
+                isPalindrome2 = false;
             }
         }
 
-        System.out.println("Input text: " + input);
-        System.out.println("Is it a palindrome?" + isPalindrome);
+        System.out.println("Input text: " + input2);
+        System.out.println("Is it a palindrome?" + isPalindrome2);
+
+//        UC6 - Queue + Stack Fairness Check
+        String input3 = "civic";
+        boolean isPalindrome3 = true;
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack2 = new Stack<>();
+        for(char c : input3.toCharArray()){
+            queue.add(c);
+            stack.push(c);
+        }
+
+        while (!queue.isEmpty()){
+            if (queue.remove() != stack.pop()){
+                isPalindrome3 = false;
+            }
+        }
+
+        System.out.println("Input text: " + input3);
+        System.out.println("Is it a palindrome?" + isPalindrome3);
+
 
 
 
