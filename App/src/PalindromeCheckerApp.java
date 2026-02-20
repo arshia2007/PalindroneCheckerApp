@@ -90,5 +90,24 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Input text: " + input4);
         System.out.println("Is it a palindrome?" + isPalindrome4);
+
+//        UC8 - Linked List Based Palindrome Checker
+        String input5 = "level";
+        boolean isPalindrome5 = true;
+        LinkedList<Character> list = new LinkedList<>();
+        for(char c : input5.toCharArray()){
+            list.add(c);
+        }
+        while (list.size() > 1){
+            if(list.removeFirst() != list.removeLast()){
+                isPalindrome5 = false;
+            }
+        }
+        System.out.println("Input text: " + input5);
+        System.out.println("Is it a palindrome?" + isPalindrome5);
     }
 }
+
+
+
+
