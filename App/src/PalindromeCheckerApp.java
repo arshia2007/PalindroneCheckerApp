@@ -197,6 +197,20 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input: " + input8);
         System.out.println("Is Palindrome? " + result);
+
+//        UC13 - Performance Comparison
+        PalindromeStrategy strategy2 = new StackStrategy();
+
+        long startTime = System.nanoTime();
+        boolean result13 = strategy.check(input8);
+        long endTime = System.nanoTime();
+
+        long duration = endTime - startTime;
+
+        System.out.println("Input: " + input8);
+        System.out.println("Is Palindrome? " + result);
+        System.out.println("Execution Time: " + duration + " ns");
+
     }
 
 }
