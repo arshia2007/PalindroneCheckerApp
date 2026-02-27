@@ -1,5 +1,16 @@
 import java.util.*;
 public class PalindromeCheckerApp {
+
+    public static boolean check(String s, int start, int end) {
+        if (start >= end)
+            return true;
+
+        if (s.charAt(start) != s.charAt(end))
+            return false;
+
+        return check(s, start + 1, end - 1);
+    }
+
     public static void main(String[] args){
         System.out.println("Welcome to Palindrome Checker App Management System");
 
@@ -105,7 +116,15 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Input text: " + input5);
         System.out.println("Is it a palindrome?" + isPalindrome5);
+
+        //    UC9 - Recursive Palindrome Checker
+        String input6 = "madam";
+        if (check(input6, 0, input6.length() - 1))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
     }
+
 }
 
 
