@@ -1,4 +1,24 @@
 import java.util.*;
+
+class PalindromeService {
+
+    public boolean checkPalindrome(String input) {
+
+        input = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        int start = 0;
+        int end = input.length() - 1;
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+}
+
 public class PalindromeCheckerApp {
 
     public static boolean check(String s, int start, int end) {
@@ -135,6 +155,13 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Input text: " + input7);
         System.out.println("Is it a palindrome? " + isPalindrome7);
+
+//        UC11 - Object Oriented
+        PalindromeService p = new PalindromeService();
+
+        System.out.println(
+                p.checkPalindrome("A man a plan a canal Panama")
+        );
 
     }
 
