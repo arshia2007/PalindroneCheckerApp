@@ -1,5 +1,30 @@
 import java.util.*;
 
+
+interface PalindromeStrategy {
+    boolean check(String input);
+}
+
+class StackStrategy implements PalindromeStrategy {
+
+    public boolean check(String input) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        // Compare by popping
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
 class PalindromeService {
 
     public boolean checkPalindrome(String input) {
@@ -163,6 +188,15 @@ public class PalindromeCheckerApp {
                 p.checkPalindrome("A man a plan a canal Panama")
         );
 
+//        UC12 - Strategy Pattern
+        String input8 = "level";
+
+        PalindromeStrategy strategy = new StackStrategy();
+
+        boolean result = strategy.check(input8);
+
+        System.out.println("Input: " + input8);
+        System.out.println("Is Palindrome? " + result);
     }
 
 }
