@@ -123,6 +123,19 @@ public class PalindromeCheckerApp {
             System.out.println("Palindrome");
         else
             System.out.println("Not Palindrome");
+
+//        UC10 - Normalized Palindrome Validation
+        String input7 = "A man a plan a canal Panama";
+        String normalized = input7.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        boolean isPalindrome7 = true;
+        for (int i = 0; i < normalized.length(); i++){
+            if(normalized.charAt(i) != normalized.charAt(normalized.length()-1-i)){
+                isPalindrome7 = false;
+            }
+        }
+        System.out.println("Input text: " + input7);
+        System.out.println("Is it a palindrome? " + isPalindrome7);
+
     }
 
 }
